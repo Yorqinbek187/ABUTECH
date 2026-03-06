@@ -1,0 +1,39 @@
+*{
+  padding: auto;
+  margin: auto;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  border: none;
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;  
+  height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #c4c4c4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a96ee; 
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+/* Hover holatidagi thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #0037ff;
+}
+
+/* Agar xohlasangiz, scroll barga chiroyli effekt */
+::-webkit-scrollbar-thumb:active {
+  background: #00067d;
+}
