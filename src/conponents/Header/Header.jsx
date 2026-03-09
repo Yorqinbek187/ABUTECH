@@ -6,13 +6,27 @@ import os2 from "/src/assets/2.png"
 import os3 from "/src/assets/3.png"
 import os4 from "/src/assets/4.png"
 import bo from "/src/assets/bo'yoq.svg"
+import a32 from "/src/assets/32000.png"
+import html from "/src/assets/html.svg"
+import css from "/src/assets/css.svg"
+import js from "/src/assets/javascript.svg"
+import react from "/src/assets/react.svg"
+import ql from "/src/assets/ql.svg"
+import node from "/src/assets/nodejs.svg"
+import click from "/src/assets/click.png"
+import s from "/src/assets/socket.svg"
+import bot from "/src/assets/bot.png"
+import fig from "/src/assets/figma.svg"
+import ph from "/src/assets/pshop.svg"
+import xd from "/src/assets/xd.svg"
+import bu from "/src/assets/butilka.png"
 import "./Header.css"
 
 const Header = () => {
     const targets = [40, 10, 30, 1];
     const [counts, setCounts] = useState([0, 0, 0, 0]);
     const [isComplete, setIsComplete] = useState(false);
-    
+
     useEffect(() => {
         if (!isComplete) {
             const steps = targets.map(target => target / 100);
@@ -50,6 +64,20 @@ const Header = () => {
         "ilgari surilgan korxonalar",
         "Yillik tajribamiz"
     ];
+    const [isFlipping, setIsFlipping] = useState(false);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsFlipping(true);
+
+            setTimeout(() => {
+                setIsFlipping(false);
+            }, 6000);
+
+        }, 4000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <>
@@ -58,17 +86,24 @@ const Header = () => {
                     <div className='header__container'>
                         <ul className='header__list'>
                             <li className='header__item'>
-                                <img src={logo} alt="" />
+
+                                <a href="#">
+                                    <img
+                                        src={logo}
+                                        alt="Logo"
+                                        className={`logo-image ${isFlipping ? 'flipping' : ''}`}
+                                    />
+                                </a>
                             </li>
                             <li className='header__item1'>
-                                <a className='header__link' href="tel:+998901234567"><i className="fa-solid fa-phone"></i> +998 90 123 45 67</a>
+                                <a className='header__link' href="tel:+998958871509"><i className="fa-solid fa-phone"></i> +998 95 887 1509</a>
                                 <hr className='vertical-hr1' />
                                 <select className='sel'>
                                     <option>Uz</option>
                                     <option>Ru</option>
                                 </select>
                                 <hr className='vertical-hr' />
-                                <button className='button'>
+                                <a href="#contact" className="button1">
                                     <span className="span-mother">
                                         <span>C</span>
                                         <span>o</span>
@@ -78,6 +113,7 @@ const Header = () => {
                                         <span>c</span>
                                         <span>t</span>
                                     </span>
+
                                     <span className="span-mother2">
                                         <span>C</span>
                                         <span>o</span>
@@ -87,7 +123,7 @@ const Header = () => {
                                         <span>c</span>
                                         <span>t</span>
                                     </span>
-                                </button>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -154,13 +190,13 @@ const Header = () => {
                                     </span>
                                 </span>
                             </span>
-                            <button className='cards__btn'>KO'RISH</button>
+                            <button data-aos="fade-up" className='cards__btn'>KO'RISH</button>
                         </li>
                     </ul>
                     <ul className='cards__list'>
                         <li className='cards__item'>
                             <span className='cards__span'>
-                                <h1 className='cards__title1'>Osmondagi bolalar</h1>
+                                <h1 className='cards__title1'>Rocketman</h1>
                                 <img className='img1' src={bo} alt="yashil bo'yoq rasmi" />
                                 <p className='cards__text'> Biz ko`plab saytlarni dasturlash jarayonida shu va shu kabi ajoyib saytlarni tuzamiz, siz bizning saytlardan foydalanayotganinigizda o`zgacha qulaylikni va yengillikni xis etasiz, o`z biznesingizni internet orqali ham rivojlantiring</p>
                                 <span data-aos="fade-up" className='aaas'>
@@ -178,7 +214,7 @@ const Header = () => {
                                     </span>
                                 </span>
                             </span>
-                            <button className='cards__btn'>KO'RISH</button>
+                            <button data-aos="fade-up" className='cards__btn'>KO'RISH</button>
                         </li>
                         <img data-aos="fade-up" width={500} src={os1} alt="web_sayt" />
                     </ul>
@@ -186,7 +222,7 @@ const Header = () => {
                         <img data-aos="fade-up" width={500} src={os2} alt="web_sayt" />
                         <li className='cards__item'>
                             <span className='cards__span'>
-                                <h1 className='cards__title1'>Osmondagi bolalar</h1>
+                                <h1 className='cards__title1'>Matras</h1>
                                 <img className='img1' src={bo} alt="yashil bo'yoq rasmi" />
                                 <p className='cards__text'> Biz ko`plab saytlarni dasturlash jarayonida shu va shu kabi ajoyib saytlarni tuzamiz, siz bizning saytlardan foydalanayotganinigizda o`zgacha qulaylikni va yengillikni xis etasiz, o`z biznesingizni internet orqali ham rivojlantiring</p>
                                 <span data-aos="fade-up" className='aaas'>
@@ -204,13 +240,13 @@ const Header = () => {
                                     </span>
                                 </span>
                             </span>
-                            <button className='cards__btn'>KO'RISH</button>
+                            <button data-aos="fade-up" className='cards__btn'>KO'RISH</button>
                         </li>
                     </ul>
                     <ul className='cards__list'>
                         <li className='cards__item'>
                             <span className='cards__span'>
-                                <h1 className='cards__title1'>Osmondagi bolalar</h1>
+                                <h1 className='cards__title1'>Digital Star</h1>
                                 <img className='img1' src={bo} alt="yashil bo'yoq rasmi" />
                                 <p className='cards__text'> Biz ko`plab saytlarni dasturlash jarayonida shu va shu kabi ajoyib saytlarni tuzamiz, siz bizning saytlardan foydalanayotganinigizda o`zgacha qulaylikni va yengillikni xis etasiz, o`z biznesingizni internet orqali ham rivojlantiring</p>
                                 <span data-aos="fade-up" className='aaas'>
@@ -228,7 +264,7 @@ const Header = () => {
                                     </span>
                                 </span>
                             </span>
-                            <button className='cards__btn'>KO'RISH</button>
+                            <button data-aos="fade-up" className='cards__btn'>KO'RISH</button>
                         </li>
                         <img data-aos="fade-up" width={500} src={os3} alt="web_sayt" />
                     </ul>
@@ -236,7 +272,7 @@ const Header = () => {
                         <img data-aos="fade-up" width={500} src={os4} alt="web_sayt" />
                         <li className='cards__item'>
                             <span className='cards__span'>
-                                <h1 className='cards__title1'>Osmondagi bolalar</h1>
+                                <h1 className='cards__title1'>Najot Ta'lim CRM</h1>
                                 <img className='img1' src={bo} alt="yashil bo'yoq rasmi" />
                                 <p className='cards__text'> Biz ko`plab saytlarni dasturlash jarayonida shu va shu kabi ajoyib saytlarni tuzamiz, siz bizning saytlardan foydalanayotganinigizda o`zgacha qulaylikni va yengillikni xis etasiz, o`z biznesingizni internet orqali ham rivojlantiring</p>
                                 <span data-aos="fade-up" className='aaas'>
@@ -254,10 +290,212 @@ const Header = () => {
                                     </span>
                                 </span>
                             </span>
-                            <button className='cards__btn'>KO'RISH</button>
+                            <button data-aos="fade-up" className='cards__btn'>KO'RISH</button>
                         </li>
                     </ul>
 
+                </div>
+            </div>
+            <div className='about'>
+                <div className='container'>
+                    <div className='about__container'>
+                        <ul className='about__list'>
+                            <li className='about__item'>
+                                <img data-aos="fade-right" className='about__img' src={a32} alt="32 000" />
+                            </li>
+                            <li className='about__item1'>
+                                <h1 className='about__title01'>Veb sayt</h1>
+                                <p className='cards__text'>Biz jamoamiz bilan birgalikda veb dasturlash va veb <br /> dizaynerlik xizmatlarini sizga taklif
+                                    qilamiz.
+                                    Tezkor va sifatli <br /> saytlar, onlayn do`konlar, telegram botlar, kreativ veb sayt <br /> dizaynlari
+                                </p>
+                                <span data-aos="fade-up" className='aaas'>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>01</p>
+                                        <h1 className='cards__title_1'>Frontend</h1>
+                                    </span>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>02</p>
+                                        <h1 className='cards__title_1'>Backend</h1>
+                                    </span>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>03</p>
+                                        <h1 className='cards__title_1'>QA Testing</h1>
+                                    </span>
+                                </span>
+                                <h1 data-aos="fade-zoom-in"
+                                    data-aos-easing="ease-in-back"
+                                    data-aos-delay="300"
+                                    data-aos-offset="0" className='about__title'>Texnologiyalar</h1>
+                                <span data-aos="fade-up" className='aaas'>
+                                    <span className='cards__span_2'>
+                                        <img src={html} alt="" />
+                                        <h1 className='cards__text'>HTML</h1>
+                                    </span>
+                                    <span className='cards__span_2'>
+                                        <img src={css} alt="" />
+                                        <h1 className='cards__text'>CSS</h1>
+                                    </span>
+                                    <span className='cards__span_2'>
+                                        <img src={js} alt="" />
+                                        <h1 className='cards__text'>JavaScript</h1>
+                                    </span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div className='about'>
+                <div className='container'>
+                    <div className='about__container'>
+                        <ul className='about__list'>
+
+                            <li className='about__item1'>
+                                <h1 className='about__title01'>Veb dastur</h1>
+                                <p className='cards__text'>Biz jamoamiz bilan birgalikda veb dasturlash va veb <br /> dizaynerlik xizmatlarini sizga taklif
+                                    qilamiz.
+                                    Tezkor va sifatli <br /> saytlar, onlayn do`konlar, telegram botlar, kreativ veb sayt <br /> dizaynlari
+                                </p>
+                                <span data-aos="fade-up" className='aaas'>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>01</p>
+                                        <h1 className='cards__title_1'>Frontend</h1>
+                                    </span>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>02</p>
+                                        <h1 className='cards__title_1'>Backend</h1>
+                                    </span>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>03</p>
+                                        <h1 className='cards__title_1'>QA Testing</h1>
+                                    </span>
+                                </span>
+                                <h1 data-aos="fade-zoom-in"
+                                    data-aos-easing="ease-in-back"
+                                    data-aos-delay="300"
+                                    data-aos-offset="0" className='about__title'>Texnologiyalar</h1>
+                                <span data-aos="fade-up" className='aaas'>
+                                    <span className='cards__span_2'>
+                                        <img src={react} alt="" />
+                                        <h1 className='cards__text'>React JS</h1>
+                                    </span>
+                                    <span className='cards__span_2'>
+                                        <img src={ql} alt="" />
+                                        <h1 className='cards__text'>GraphQL</h1>
+                                    </span>
+                                    <span className='cards__span_2'>
+                                        <img src={node} alt="" />
+                                        <h1 className='cards__text'>NodeJS</h1>
+                                    </span>
+                                </span>
+                            </li>
+                            <li className='about__item'>
+                                <img data-aos="fade-left" className='about__img' src={click} alt="click" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div className='about'>
+                <div className='container'>
+                    <div className='about__container'>
+                        <ul className='about__list'>
+                            <li className='about__item'>
+                                <img data-aos="fade-right" className='about__img' src={bot} alt="BOT" />
+                            </li>
+                            <li className='about__item1'>
+                                <h1 className='about__title01'>Telegram BOT</h1>
+                                <p className='cards__text'>Biz jamoamiz bilan birgalikda veb dasturlash va veb <br /> dizaynerlik xizmatlarini sizga taklif
+                                    qilamiz.
+                                    Tezkor va sifatli <br /> saytlar, onlayn do`konlar, telegram botlar, kreativ veb sayt <br /> dizaynlari
+                                </p>
+                                <span data-aos="fade-up" className='aaas'>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>01</p>
+                                        <h1 className='cards__title_1'>Frontend</h1>
+                                    </span>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>02</p>
+                                        <h1 className='cards__title_1'>Backend</h1>
+                                    </span>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>03</p>
+                                        <h1 className='cards__title_1'>QA Testing</h1>
+                                    </span>
+                                </span>
+                                <h1 data-aos="fade-zoom-in"
+                                    data-aos-easing="ease-in-back"
+                                    data-aos-delay="300"
+                                    data-aos-offset="0" className='about__title'>Texnologiyalar</h1>
+                                <span data-aos="fade-up" className='aaas'>
+                                    <span className='cards__span_2'>
+                                        <img src={s} alt="" />
+                                        <h1 className='cards__text'>socket IO</h1>
+                                    </span>
+                                    <span className='cards__span_2'>
+                                        <img src={ql} alt="" />
+                                        <h1 className='cards__text'>GraphQL</h1>
+                                    </span>
+                                    <span className='cards__span_2'>
+                                        <img src={node} alt="" />
+                                        <h1 className='cards__text'>Node JS</h1>
+                                    </span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div className='about'>
+                <div className='container'>
+                    <div className='about__container'>
+                        <ul className='about__list'>
+
+                            <li className='about__item1'>
+                                <h1 className='about__title01'>UX/UI dizayn</h1>
+                                <p className='cards__text'>Biz jamoamiz bilan birgalikda veb dasturlash va veb <br /> dizaynerlik xizmatlarini sizga taklif
+                                    qilamiz.
+                                    Tezkor va sifatli <br /> saytlar, onlayn do`konlar, telegram botlar, kreativ veb sayt <br /> dizaynlari
+                                </p>
+                                <span data-aos="fade-up" className='aaas'>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>01</p>
+                                        <h1 className='cards__title_1'>Frontend</h1>
+                                    </span>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>02</p>
+                                        <h1 className='cards__title_1'>Backend</h1>
+                                    </span>
+                                    <span className='cards__span_1'>
+                                        <p className='cards__text1'>03</p>
+                                        <h1 className='cards__title_1'>QA Testing</h1>
+                                    </span>
+                                </span>
+                                <h1 data-aos="fade-zoom-in"
+                                    data-aos-easing="ease-in-back"
+                                    data-aos-delay="300"
+                                    data-aos-offset="0" className='about__title'>Texnologiyalar</h1>
+                                <span data-aos="fade-up" className='aaas'>
+                                    <span className='cards__span_2'>
+                                        <img src={fig} alt="" />
+                                        <h1 className='cards__text'>Figma</h1>
+                                    </span>
+                                    <span className='cards__span_2'>
+                                        <img src={ph} alt="" />
+                                        <h1 className='cards__text'>Photoshop</h1>
+                                    </span>
+                                    <span className='cards__span_2'>
+                                        <img src={xd} alt="" />
+                                        <h1 className='cards__text'>Adobe XD</h1>
+                                    </span>
+                                </span>
+                            </li>
+                            <li className='about__item'>
+                                <img data-aos="fade-left" className='about__img' src={bu} alt="but" />
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </>
